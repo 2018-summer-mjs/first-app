@@ -68,12 +68,23 @@ export class AppComponent {
     this.addNumbersResult = Number(this.addNumberOne) + Number(this.addNumberTwo);
   }
 
-<<<<<<< HEAD
+  //
+  // Modulo Behavior
+  //
+
+  public modNumberOne = 0;
+  public modNumberTwo = 0;
+  public modNumbersResult = 0;
+
+  public modNumbers() {
+
+    this.modNumbersResult = Number(this.modNumberOne) % Number(this.modNumberTwo);
+  }
+
   public subtractNumbers() {
     this.subtractNumbersResult = Number(this.subtractNumberOne) - Number(this.subtractNumberTwo);
   }
 
-=======
 
   //
   // multiplication calculator
@@ -95,5 +106,5 @@ export class AppComponent {
   public divideNumbers() {
     this.divideNumbersResult = Number(this.divideNumberOne) / Number(this.divideNumberTwo);
   }
->>>>>>> master
+
 }
