@@ -67,10 +67,10 @@ export class AppComponent {
   // Division
   public divideNumberOne = 0;
   public divideNumberTwo = 0;
-  public divideumbersResult = 0;
+  public divideNumbersResult = 0;
 
   public divideNumbers() {
-    this.divideNumbersResult = Number(this.divideNumberOne) + Number(this.divideNumberTwo);
+    this.divideNumbersResult = Number(this.divideNumberOne) / Number(this.divideNumberTwo);
   }
 
 }
