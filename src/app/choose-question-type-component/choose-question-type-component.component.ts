@@ -16,7 +16,7 @@ export class ChooseQuestionTypeComponentComponent implements OnInit {
   constructor(private qtSvc: QuestionTypeService) { }
 
   // View Model properties...
-  public questionTypes: string[];
+  public questionTypes: QuestionTypeDisplay[];
 
 
 
@@ -24,7 +24,7 @@ export class ChooseQuestionTypeComponentComponent implements OnInit {
 
   ngOnInit() {
 
-    this.questionTypes = this.qtSvc.getAvailableQuestionsTypes().map(x => ({ name: x, checked: false });
+    this.questionTypes = this.qtSvc.getAvailableQuestionsTypes().map(x => ({ name: x, checked: false }))
   }
 
 }

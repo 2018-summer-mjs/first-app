@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ChooseQuestionTypeComponentComponent } from './choose-question-type-component/choose-question-type-component.component';
 
 @Component({
   selector: 'first-app',
@@ -40,7 +41,12 @@ export class AppComponent {
 
   public newQuizName; // = "foo";
 
+  @ViewChild(ChooseQuestionTypeComponentComponent)
+  public qtComp: ChooseQuestionTypeComponentComponent
+
   public addQuiz() {
+    console.log(this.qtComp.questionTypes);
+  
     this.quizzes.push({ 
       name: this.newQuizName 
       , showDelete: true
