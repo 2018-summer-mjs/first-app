@@ -55,12 +55,22 @@ export class AppComponent {
   // Calculator behavior
   //
 
+  // Addition
   public addNumberOne = 0;
   public addNumberTwo = 0;
   public addNumbersResult = 0;
 
   public addNumbers() {
     this.addNumbersResult = Number(this.addNumberOne) + Number(this.addNumberTwo);
+  }
+
+  // Division
+  public divideNumberOne = 0;
+  public divideNumberTwo = 0;
+  public divideumbersResult = 0;
+
+  public divideNumbers() {
+    this.divideNumbersResult = Number(this.divideNumberOne) + Number(this.divideNumberTwo);
   }
 
 }
