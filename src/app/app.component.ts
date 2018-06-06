@@ -60,8 +60,7 @@ export class AppComponent {
   public addNumbersResult = 0;
 
   public addNumbers() {
-    //this.addNumbersResult = Number(this.addNumberOne) + Number(this.addNumberTwo);
-    this.addNumbersResult = this.addNumberOne + this.addNumberTwo;
+    this.addNumbersResult = Number(this.addNumberOne) + Number(this.addNumberTwo);
   }
 
 }
