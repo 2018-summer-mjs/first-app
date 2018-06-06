@@ -2,5 +2,6 @@
   <!--<hr />
   <p>Adding a service component <br> choose-question-type-component works!</p>
   <p>{{ questionTypes }} </p> -->
-  <span *ngFor="let qt of questionTypes">{{ qt.name }} {{ qt.checked }} &nbsp;</span>
+  <!--<span *ngFor="let qt of questionTypes"><input type="checkbox" [(ngModel)]="qt.checked"> {{ qt.name }} {{ qt.checked }} &nbsp;</span>-->
+  <label *ngFor="let qt of questionTypes">&nbsp;<input type="checkbox" [(ngModel)]="qt.checked"> {{ qt.name }}</label>&nbsp;
 

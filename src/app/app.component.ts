@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ChooseQuestionTypeComponentComponent } from './choose-question-type-component/choose-question-type-component.component';
 
 @Component({
   selector: 'first-app',
@@ -14,6 +15,11 @@ export class AppComponent {
   //   , "Quiz 2"
   //   , "Quiz 3"
   // ];
+
+  // decorating the child with the property
+  @ViewChild(ChooseQuestionTypeComponentComponent)
+  public qtComp: ChooseQuestionTypeComponentComponent
+
 
   public quizzes = [
     {
@@ -40,9 +46,13 @@ export class AppComponent {
 
   public newQuizName; // = "foo";
 
+  // add a new quiz to the list
   public addQuiz() {
+
+    console.log(this.qtComp.questionTypes);
+
     this.quizzes.push({ 
-      name: this.newQuizName 
+      name: this.newQuizName
       , showDelete: true
     });
     this.newQuizName = "";
