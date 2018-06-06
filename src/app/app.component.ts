@@ -50,4 +50,16 @@ export class AppComponent {
   public deleteQuiz(quizToDelete) {
     this.quizzes = this.quizzes.filter(x => x !== quizToDelete);
   }
+
+  //
+  //calculator behavior
+  //
+
+  public addNumberOne: number;
+  public addNumberTwo = 0;
+  public addNumbersResult
+  public addNumbers(){
+    // this.addNumbersResult= Number(this.addNumberOne) + Number(this.addNumberTwo);
+    this.addNumbersResult= this.addNumberOne + this.addNumberTwo;
+  }
 }
