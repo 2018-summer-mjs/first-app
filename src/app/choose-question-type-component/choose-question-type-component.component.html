@@ -1,7 +1,6 @@
 
-  <hr />
-  <p>Adding a service component <br>choose-question-type-component works!</p>
-  <p>{{ questionTypes }}</p>
-  
+  <!--<hr />
+  <p>Adding a service component <br> choose-question-type-component works!</p>
+  <p>{{ questionTypes }} </p> -->
+  <span *ngFor="let qt of questionTypes">{{ qt.name }} {{ qt.checked }} &nbsp;</span>
 
-  <hr />

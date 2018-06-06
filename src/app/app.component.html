@@ -15,13 +15,17 @@
 <button (click)="addFunnyQuiz()">Add Funny Quiz</button>
 <br>
 <br>
-<input type="text" [(ngModel)]="newQuizName">
+<input type="text" [(ngModel)]="newQuizName">&nbsp;
+<app-choose-question-type-component></app-choose-question-type-component>
+&nbsp;
 <button (click)="addQuiz()">Add</button>
 
 <br>
 <br/>
 
-<app-choose-question-type-component></app-choose-question-type-component>
+<span>Testing out a span outside of the component!</span>
+
+
 
 
 <h2>Calculator</h2>
