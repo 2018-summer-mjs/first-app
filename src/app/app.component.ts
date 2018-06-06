@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'first-app',
   templateUrl: './app.component.html',
+  //template: '<h1>Hi</h1>',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
