@@ -1,3 +1,5 @@
 <p>
- <span *ngFor="let questionType of questionTypes">{{ questionType.name }} {{questionType.checked }}</span>
+ <label  *ngFor="let questionType of questionTypes">
+    <input type="checkbox" [(ngModel)] = questionType.checked>
+  {{ questionType.name }} </label>
 </p>
