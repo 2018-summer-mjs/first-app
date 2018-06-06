@@ -1,4 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { QuestionTypeService } from '../question-type.service';
+
+interface QuestionTypeDisplay {
+
+  name: string;
+  checked: boolean;
+}
+
 
 @Component({
   selector: 'app-choose-question-type-component',
@@ -7,9 +15,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChooseQuestionTypeComponentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private questionTypeSvc: QuestionTypeService) { }
+
+  // View Model Properties
+  public questionTypes: string[];
+  
+  // Life Cycle hook
+
+  
 
   ngOnInit() {
+    this.questionTypes = this.questionTypeSvc.getAvailableQuestionTypes().map(x => ({name: x, checked: false}))
   }
 
 }
