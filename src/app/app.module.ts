@@ -3,10 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { ChooseQuestionTypeComponentComponent } from './choose-question-type-component/choose-question-type-component.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChooseQuestionTypeComponentComponent
   ],
   imports: [
     BrowserModule
