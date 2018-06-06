@@ -66,7 +66,9 @@ export class AppComponent {
     //Not the best approach as it casts (better to force html to only accept numbers)
     this.addNumbersResult = Number(this.addNumberOne) + Number(this.addNumberTwo);
 
-    
+    // HTML or ts validation... or both?
+
+
   }
 
 
