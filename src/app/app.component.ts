@@ -60,6 +60,10 @@ export class AppComponent {
   public addNumberTwo = 0;
   public addNumbersResult = 0;
 
+  public subtractNumberOne = 0;
+  public subtractNumberTwo = 0;
+  public subtractNumbersResult = 0;
+
   public addNumbers() {
     this.addNumbersResult = Number(this.addNumberOne) + Number(this.addNumberTwo);
   }
@@ -75,6 +79,10 @@ export class AppComponent {
   public modNumbers() {
 
     this.modNumbersResult = Number(this.modNumberOne) % Number(this.modNumberTwo);
+  }
+
+  public subtractNumbers() {
+    this.subtractNumbersResult = Number(this.subtractNumberOne) - Number(this.subtractNumberTwo);
   }
 
 
@@ -98,4 +106,5 @@ export class AppComponent {
   public divideNumbers() {
     this.divideNumbersResult = Number(this.divideNumberOne) / Number(this.divideNumberTwo);
   }
+
 }
