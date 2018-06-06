@@ -39,6 +39,24 @@
   &nbsp;&nbsp;
   <label>{{ modNumbersResult }}</label>
 </div>
+<br>
+<div>
+  <input type="number" [(ngModel)]="multiplyNumberOne">
+  *
+  <input type="number" [(ngModel)]="multiplyNumberTwo">
+  &nbsp;<button (click)="multiplyNumbers()">=</button>
+  &nbsp;&nbsp;
+  <label>{{ multiplyNumbersResult }}</label>
+</div>
+<br>
+<div>
+  <input type="number" [(ngModel)]="divideNumberOne">
+  /
+  <input type="number" [(ngModel)]="divideNumberTwo">
+  &nbsp;<button (click)="divideNumbers()">=</button>
+  &nbsp;&nbsp;
+  <label>{{ divideNumbersResult }}</label>
+</div>
 
 
 
