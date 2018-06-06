@@ -69,6 +69,17 @@
   <label>{{ divideNumbersResult }}</label>
 </div>
 
+<br>
+
+<div>
+  <input type="number" [(ngModel)]="powNumberOne">
+  ^
+  <input type="number" [(ngModel)]="powNumberTwo">
+  &nbsp;<button (click)="powNumbers()">=</button>
+  &nbsp;&nbsp;
+  <label>{{ powNumbersResult }}</label>
+</div>
+
 
 
 
