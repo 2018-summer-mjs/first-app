@@ -63,4 +63,16 @@ export class AppComponent {
     this.addNumbersResult = Number(this.addNumberOne) + Number(this.addNumberTwo);
   }
 
+
+  //
+  // multiplication calculator
+  //
+
+  public multiplyNumberOne = 0;
+  public multiplyNumberTwo = 0;
+  public multiplyNumbersResult = 0;
+
+  public multiplyNumbers() {
+    this.multiplyNumbersResult = Number(this.multiplyNumberOne) * Number(this.multiplyNumberTwo);
+  }
 }
