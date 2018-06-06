@@ -63,4 +63,16 @@ export class AppComponent {
     this.addNumbersResult = Number(this.addNumberOne) + Number(this.addNumberTwo);
   }
 
+  //
+  // Calculator Math.pow
+  //
+
+  public powNumberOne = 0;
+  public powNumberTwo = 0;
+  public powNumbersResult = 0;
+
+  public powNumbers() {
+    this.powNumbersResult = Math.pow(Number(this.powNumberOne), Number(this.powNumberTwo))
+  }
+
 }
