@@ -31,7 +31,8 @@
   &nbsp;&nbsp;
   <label>{{ addNumbersResult }}</label>
 </div>
-<hr>
+<br>
+
 <div>
   <input type="number" [(ngModel)]="subtractNumberOne">
   &nbsp;<span class="redHighlight">-</span>&nbsp;
@@ -39,6 +40,25 @@
   &nbsp;<button class="redHighlight" (click)="subtractNumbers()">=</button>
   &nbsp;&nbsp;
   <label>{{ subtractNumbersResult }}</label>
+</div>
+<br>
+
+<div>
+  <input type="number" [(ngModel)]="multiplyNumberOne">
+  *
+  <input type="number" [(ngModel)]="multiplyNumberTwo">
+  &nbsp;<button (click)="multiplyNumbers()">=</button>
+  &nbsp;&nbsp;
+  <label>{{ multiplyNumbersResult }}</label>
+</div>
+<br>
+<div>
+  <input type="number" [(ngModel)]="divideNumberOne">
+  /
+  <input type="number" [(ngModel)]="divideNumberTwo">
+  &nbsp;<button (click)="divideNumbers()">=</button>
+  &nbsp;&nbsp;
+  <label>{{ divideNumbersResult }}</label>
 </div>
 
 
