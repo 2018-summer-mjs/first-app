@@ -28,15 +28,16 @@
   +
   <input type="number" [(ngModel)]="addNumberTwo">
   &nbsp;<button (click)="addNumbers()">=</button>
-
+  &nbsp;&nbsp;
+  <label>{{ addNumbersResult }}</label>
   <br><br>
-  
+
   <input type="number" [(ngModel)]="modNumberOne">
   %
   <input type="number" [(ngModel)]="modNumberTwo">
   &nbsp;<button (click)="modNumbers()">=</button>
   &nbsp;&nbsp;
-  <label>{{ addNumbersResult }}</label>
+  <label>{{ modNumbersResult }}</label>
 </div>
 
 
