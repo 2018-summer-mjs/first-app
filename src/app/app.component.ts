@@ -50,4 +50,24 @@ export class AppComponent {
   public deleteQuiz(quizToDelete) {
     this.quizzes = this.quizzes.filter(x => x !== quizToDelete);
   }
+
+  //
+  //  Calculator behavior
+  //
+
+  public addNumberOne: number = 0;
+  public addNumberTwo = 0;
+  public addNumbersResult = 0;
+
+  public addNumbers(){
+    // add the numbers together, but it concatenates instead of adds
+    //this.addNumbersResult = this.addNumberOne + this.addNumberTwo;
+
+    //Not the best approach as it casts (better to force html to only accept numbers)
+    this.addNumbersResult = Number(this.addNumberOne) + Number(this.addNumberTwo);
+
+    
+  }
+
+
 }
