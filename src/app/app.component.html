@@ -32,6 +32,17 @@
   <label>{{ addNumbersResult }}</label>
 </div>
 <br>
+
+<div>
+  <input type="number" [(ngModel)]="subtractNumberOne">
+  &nbsp;<span class="redHighlight">-</span>&nbsp;
+  <input type="number" [(ngModel)]="subtractNumberTwo">
+  &nbsp;<button class="redHighlight" (click)="subtractNumbers()">=</button>
+  &nbsp;&nbsp;
+  <label>{{ subtractNumbersResult }}</label>
+</div>
+<br>
+
 <div>
   <input type="number" [(ngModel)]="multiplyNumberOne">
   *
