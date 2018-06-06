@@ -6,4 +6,16 @@ import { Injectable } from '@angular/core';
 export class QuestionTypeService {
 
   constructor() { }
-}
+
+  public getAvailableQuestionsTypes() {
+    return [
+      "Multiple Choice"
+      , "True/False"
+      , "Essay"
+      , "Short Answer"
+    ];
+  }
+
+
+
+} // end QuestionTypeService
