@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { reject } from 'q';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,14 @@ export class QuestionTypeService {
     // ];
 
 
+  }
+
+  public getAvailableQuestionTypeCount(succeed: boolean): Promise<number> {
+    let p = new Promise<number>(
+      (resolve, reject) => {
+        succeed : resolve(42) : reject("Failed")
+      }
+    );
+    return p ;
   }
 }

@@ -29,6 +29,11 @@ export class ChooseQuestionTypeComponentComponent implements OnInit {
       data => this.questionTypes = data.map(x => ({ name: x, checked: false}))
       , error => this.errorLoadingQuestionTypes = true
     );
+
+    let p = this.questionTypeSvc.getAvailableQuestionTypeCount(true);
+    p
+      .then(data => console.log(data))
+      .catch(e => console.log(e));
   }
 
 }
