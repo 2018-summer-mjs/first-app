@@ -62,6 +62,8 @@ export class AppComponent {
       .map(x => x.name)
       .join(", ");
 
+    summaryText = summaryText.length > 0 ? `(${summaryText})` : "";
+
     console.log(summaryText);
 
 

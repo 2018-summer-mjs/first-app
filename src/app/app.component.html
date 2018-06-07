@@ -9,8 +9,7 @@
 
 <!-- {{ quizzes }} -->
 <ul>
-  <li *ngFor="let q of quizzes">{{ q.name }} 
-    <span *ngIf="q.summary && q.summary.length > 0">({{ q.summary }})</span>
+  <li *ngFor="let q of quizzes">{{ q.name }} {{ q.summary }}
     <button *ngIf="q.showDelete" (click)="deleteQuiz(q)">Delete</button>
   </li>
 </ul>
