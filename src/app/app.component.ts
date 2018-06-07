@@ -1,4 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ChooseQuestionTypeComponentComponent } from './choose-question-type-component/choose-question-type-component.component';
+
+interface QuizDisplay {
+  name: string;
+  showDelete: boolean;
+  summary?: string;
+}
 
 @Component({
   selector: 'first-app',
@@ -7,6 +14,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   title = 'first-app';
 
   // quizzes = [
@@ -15,7 +23,7 @@ export class AppComponent {
   //   , "Quiz 3"
   // ];
 
-  public quizzes = [
+  public quizzes: QuizDisplay[] = [
     {
       name: "Quiz 1"
       , showDelete: false
@@ -40,12 +48,33 @@ export class AppComponent {
 
   public newQuizName; // = "foo";
 
+  @ViewChild(ChooseQuestionTypeComponentComponent)
+  public qtComp: ChooseQuestionTypeComponentComponent
+  
   public addQuiz() {
+
+
+    let summaryText = this.qtComp.questionTypes
+      .filter(x => x.checked === true)
+      .map(x => x.name)
+      .join(", ");
+
+    summaryText = summaryText.length > 0 ? `(${summaryText})` : "";
+
+    console.log(summaryText);
+
     this.quizzes.push({ 
       name: this.newQuizName 
       , showDelete: true
+      , summary: summaryText
     });
+
+    //
+    // Cleanup add quiz controls.
+    //
     this.newQuizName = "";
+
+    this.qtComp.questionTypes = this.qtComp.questionTypes.map(x => ({ ...x, checked: false }));
   }
 
   public deleteQuiz(quizToDelete) {
