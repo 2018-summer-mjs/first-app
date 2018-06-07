@@ -9,11 +9,14 @@ export class QuestionTypeService {
 
   constructor(private builtInAngularHttpClient: HttpClient) { }
 
-  public getAvailableQuestionTypes() {
-    return this.builtInAngularHttpClient
-      .get<string[]>("https://modern-js.azurewebsites.net/api/GetQuestionTypes?name=magic%20Quiz");
+   public getAvailableQuestionTypes() {
+     return this.builtInAngularHttpClient
+       .get<string[]>("https://modern-js.azurewebsites.net/api/GetQuestionTypes?name=magic%20Quiz");
 
 
+// public getAvailableQuestionTypes() {
+//   return this.builtInAngularHttpClient
+//     .get<string[]>("https://modern-js.azurewebsites.net/api/GetQuestionTypes?name1=magic%20Quiz");
 
 
     // return [
