@@ -61,19 +61,22 @@ export class AppComponent {
     // filter out only the true from the array
     // map thru the objects and emit the name only
     // join array with , and space 
-    let summary = this.qtComp.questionTypes
+    let summaryText = this.qtComp.questionTypes
           .filter(x => x.checked === true)
           .map(x => x.name)
           .join(', ');
 
+    // wrap entire thing with () if there is a value 
+    summaryText = summaryText.length > 0 ? `({$summaryText})`: "";
+
     // display questionTypes array to the console
     //console.log(this.qtComp.questionTypes);
-    console.log(summary);
+    console.log(summaryText);
 
     this.quizzes.push({ 
       name: this.newQuizName
       , showDelete: true
-      , summary: summary
+      , summary: summaryText
     });
     this.newQuizName = "";
   }
