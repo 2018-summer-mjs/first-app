@@ -1,6 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
 import { ChooseQuestionTypeComponentComponent } from './choose-question-type-component/choose-question-type-component.component';
 
+interface QuizDisplayType {
+  name: string;
+  showDelete: boolean;
+  summary?: string;
+}
+
 @Component({
   selector: 'first-app',
   templateUrl: './app.component.html',
@@ -20,7 +26,7 @@ export class AppComponent {
   //   , "Quiz 3"
   // ];
 
-  public quizzes = [
+  public quizzes: QuizDisplayType[] = [
     {
       name: "Quiz 1"
       , showDelete: false
@@ -38,7 +44,7 @@ export class AppComponent {
   public addFunnyQuiz() {
     this.quizzes.push({
       name: "Funny Quiz"
-      , showDelete: false 
+      , showDelete: false
     });
     //console.log(this.newQuizName);
   }
@@ -48,18 +54,19 @@ export class AppComponent {
   public addQuiz() {
     
 
-    let summary = this.questionTypeComponent.questionTypes
+    let summaryText = this.questionTypeComponent.questionTypes
       .filter(x => x.checked)
       .map(x => x.name)
       .join(", "); //smartly uses the comma when needed
 
-      console.log(summary);
+      console.log(summaryText);
 
   
 
     this.quizzes.push({ 
       name: this.newQuizName 
-      , showDelete: true
+      , showDelete: true, 
+      , summary: summaryText
     });
     this.newQuizName = "";
   }
