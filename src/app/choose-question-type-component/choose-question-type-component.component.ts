@@ -30,6 +30,14 @@ export class ChooseQuestionTypeComponentComponent implements OnInit {
       //, error => console.log(error)
       , error => this.errorLoadingQuestionTypes = true
     );
+
+    // use promise
+    let p = this.qtSvc.getAvailableQuestionTypeCount(true);
+
+    // chained promise display
+    p
+      .then(data => console.log(data))
+      .catch(e => console.log(e));
     
   }
 
