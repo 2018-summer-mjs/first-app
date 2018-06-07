@@ -1,5 +1,12 @@
-<p>
- <label  *ngFor="let questionType of questionTypes">
+<span *ngIf="!errorLoadingQuestionTypes">
+  <label  *ngFor="let questionType of questionTypes">
     <input type="checkbox" [(ngModel)] = questionType.checked>
   {{ questionType.name }} </label>
-</p>
+
+</span>
+
+<span *ngIf="errorLoadingQuestionTypes">
+  Couldn't load question types :( 
+
+</span>
+ 

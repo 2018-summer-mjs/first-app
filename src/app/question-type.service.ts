@@ -12,7 +12,7 @@ export class QuestionTypeService {
 
     // make a call to http://modern-js.azurewebsites.net/api/GetQuestionTypes?name=foo to get data
 
-    return this.builtInAngularHTTPClient.get<string[]>("https://modern-js.azurewebsites.net/api/GetQuestionTypes?name=foo");
+    return this.builtInAngularHTTPClient.get<string[]>("https://modern-js.azurewebsites.net/api/GetQuestionTypes?name=Magic");
     // return [
     //   "Multiple Choice"
     //   , "True/False"
