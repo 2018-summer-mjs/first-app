@@ -9,12 +9,16 @@ export class QuestionTypeService {
   constructor(private builtInAngularHttpClient: HttpClient) { }
 
   public getAvailableQuestionsTypes() {
-    return [
-      "Multiple Choice"
-      , "True/False"
-      , "Essay"
-      , "Short Answer"
-    ];
+    
+    return this.builtInAngularHttpClient
+      .get<string[]>("https://modern-js.azurewebsites.net/api/GetQuestionTypes?name=🦄");
+
+    // return [
+    //   "Multiple Choice"
+    //   , "True/False"
+    //   , "Essay"
+    //   , "Short Answer"
+    // ];
   }
 
 
