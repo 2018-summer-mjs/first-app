@@ -24,7 +24,10 @@ export class ChooseQuestionTypeComponentComponent implements OnInit {
 
 
   ngOnInit() {
-    this.questionTypes = this.questionTypeSvc.getAvailableQuestionTypes().map(x => ({name: x, checked: false}));
+    this.questionTypes = this.questionTypeSvc.getAvailableQuestionTypes().subscribe(
+      data => this.questionTypes = data.map(x => ({ name: x, checked: false}))
+      , error => console.log(error)
+    );
   }
 
 }
