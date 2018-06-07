@@ -12,8 +12,16 @@ interface QuestionTypeDisplay{
   templateUrl: './choose-question-type-component.component.html',
   styleUrls: ['./choose-question-type-component.component.css']
 })
+
+// export is a class visable
 export class ChooseQuestionTypeComponentComponent implements OnInit {
 
+  // private qtSvc: QuestionTypeService;
+  // constructor(/*private */ qtSvc123:QuestionTypeService){
+  //   this.qtSvc = qtSvc123;
+  // }
+
+  // this causes the dependency injection
   constructor(private qtSvc: QuestionTypeService) { }
 
   // view model properties ...
