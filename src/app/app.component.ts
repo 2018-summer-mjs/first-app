@@ -46,20 +46,26 @@ export class AppComponent {
 
   public newQuizName; // = "foo";
 
-
   //
   // Add user Quiz to Quiz Object
   //
   public addQuiz() {
 
-    console.log(this.qtComponent.questionTypes);
-    let trueQuizTypes = this.qtComponent.questionTypes.filter(x => x.checked === true);
-    console.log(trueQuizTypes);
+    let summaryText = this.qtComponent.questionTypes
+      .filter(x => x.checked)
+      .map(x => x.name)
+      .join(", ");
+
+    console.log(summaryText);
+
+
     
     this.quizzes.push({ 
       name: this.newQuizName 
       , showDelete: true
     });
+    
+    console.log(this.quizzes);
     this.newQuizName = "";
   }
 
