@@ -52,7 +52,8 @@
 
         <div class="card-body">
           <div>
-            <input type="number" [(ngModel)]="addNumberOne"> +
+            <input type="number" [(ngModel)]="addNumberOne">
+            &nbsp;<span class="btn btn btn-outline-primary">+</span>&nbsp;
             <input type="number" [(ngModel)]="addNumberTwo"> &nbsp;
             <button class="btn btn-primary" (click)="addNumbers()">=</button>
             &nbsp;&nbsp;
@@ -60,7 +61,8 @@
             <br>
             <br>
 
-            <input type="number" [(ngModel)]="modNumberOne"> %
+            <input type="number" [(ngModel)]="modNumberOne">
+            &nbsp;<span class="btn btn btn-outline-primary">%</span>&nbsp;
             <input type="number" [(ngModel)]="modNumberTwo"> &nbsp;
             <button class="btn btn-primary" (click)="modNumbers()">=</button>
             &nbsp;&nbsp;
@@ -69,8 +71,8 @@
           <br>
 
           <div>
-            <input type="number" [(ngModel)]="subtractNumberOne"> &nbsp;
-            <span class="redHighlight">-</span>&nbsp;
+            <input type="number" [(ngModel)]="subtractNumberOne">
+            &nbsp;<span class="btn btn btn-outline-primary">-</span>&nbsp;
             <input type="number" [(ngModel)]="subtractNumberTwo"> &nbsp;
             <button class="btn btn-primary" (click)="subtractNumbers()">=</button>
             &nbsp;&nbsp;
@@ -79,7 +81,8 @@
           <br>
 
           <div>
-            <input type="number" [(ngModel)]="multiplyNumberOne"> *
+            <input type="number" [(ngModel)]="multiplyNumberOne">
+            &nbsp;<span class="btn btn btn-outline-primary">*</span>&nbsp;
             <input type="number" [(ngModel)]="multiplyNumberTwo"> &nbsp;
             <button class="btn btn-primary" (click)="multiplyNumbers()">=</button>
             &nbsp;&nbsp;
@@ -87,7 +90,8 @@
           </div>
           <br>
           <div>
-            <input type="number" [(ngModel)]="divideNumberOne"> /
+            <input type="number" [(ngModel)]="divideNumberOne">
+            &nbsp;<span class="btn btn btn-outline-primary">/</span>&nbsp;
             <input type="number" [(ngModel)]="divideNumberTwo"> &nbsp;
             <button class="btn btn-primary" (click)="divideNumbers()">=</button>
             &nbsp;&nbsp;
@@ -97,7 +101,8 @@
           <br>
 
           <div>
-            <input type="number" [(ngModel)]="powNumberOne"> ^
+            <input type="number" [(ngModel)]="powNumberOne">
+            &nbsp;<span class="btn btn btn-outline-primary">^</span>&nbsp;
             <input type="number" [(ngModel)]="powNumberTwo"> &nbsp;
             <button class="btn btn-primary" (click)="powNumbers()">=</button>
             &nbsp;&nbsp;

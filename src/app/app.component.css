@@ -1,3 +1,7 @@
 .redHighlight {
     background-color: red;
 }
+
+.btn-outline-primary {
+    width: 40px;
+}
