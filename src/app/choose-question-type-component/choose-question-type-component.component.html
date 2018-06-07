@@ -1,6 +1,6 @@
 
 <span *ngIf="!errorLoadingQuestionTypes">
-<label *ngFor="let qt of questionTypes">
+<label *ngFor="let qt of questionTypes">&nbsp;
   <input type="checkbox" [(ngModel)]="qt.checked"/>
   {{ qt.name }}
 </label>
