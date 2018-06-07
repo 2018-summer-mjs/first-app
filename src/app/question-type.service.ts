@@ -7,14 +7,20 @@ import { HttpClient } from '@angular/common/http'
 })
 export class QuestionTypeService {
 
-  constructor(private builInAngularHTTPClient: HttpClient) { }
+  constructor(private builtInAngularHttpClient: HttpClient) { }
 
   public getAvailableQuestionTypes() {
-    return [
-      "Multiple Choice"
-      , "True/False"
-      , "Essay"
-      , "Short Answer"
-    ];
+    return this.builtInAngularHttpClient
+      .get<string[]>("https://modern-js.azurewebsites.net/api/GetQuestionTypes?name=magic%20Quiz");
+
+
+
+
+    // return [
+    //   "Multiple Choice"
+    //   , "True/False"
+    //   , "Essay"
+    //   , "Short Answer"
+    // ];
   }
 }
