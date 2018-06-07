@@ -67,7 +67,7 @@ export class AppComponent {
           .join(', ');
 
     // wrap entire thing with () if there is a value 
-    summaryText = summaryText.length > 0 ? `({$summaryText})`: "";
+    summaryText = summaryText.length > 0 ? `(${summaryText})` : "";
 
     // display questionTypes array to the console
     //console.log(this.qtComp.questionTypes);
@@ -78,7 +78,12 @@ export class AppComponent {
       , showDelete: true
       , summary: summaryText
     });
+
+    // reset the test name
     this.newQuizName = "";
+
+    //reset the checkboxes to be unchecked
+    this.qtComp.questionTypes = this.qtComp.questionTypes.map( x => ({ ...x, checked: false}) );
   }
 
   public deleteQuiz(quizToDelete) {
