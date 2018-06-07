@@ -45,6 +45,15 @@ export class AppComponent {
   public qtComp: ChooseQuestionTypeComponentComponent
 
   public addQuiz() {
+
+    let summary = this.qtComp.questionTypes
+      .filter(x => x.checked === true)
+      .map(x => x.name)
+      .join(", ")
+      ;
+    
+    console.log(summary);
+
     console.log(this.qtComp.questionTypes);
 
     this.quizzes.push({
