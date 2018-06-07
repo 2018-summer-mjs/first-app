@@ -3,9 +3,6 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-
-
-  <!-- <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="> -->
 </div>
 
 
@@ -13,17 +10,111 @@
   <div class="row">
     <div class="col-md-12">
 
-      <h2>Quizzes</h2>
+      <div class="card">
+        <div class="card-header">
+          Quizzes
+        </div>
+        <div class="card-body">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <!-- {{ quizzes }} -->
+                <div class="list-group">
+                  <li *ngFor="let q of quizzes" class="list-group-item list-group-item-action">
+                    <div class="row">
+                      <div class="col-md-10">
+                        {{ q.name }}
+                      </div>
+                      <div class="col-md-2">
+                        <button *ngIf="q.showDelete" (click)="deleteQuiz(q)">Delete</button>
+                      </div>
+                    </div>
+                  </li>
+                </div>
 
-      <!-- {{ quizzes }} -->
-      <ul>
-        <li *ngFor="let q of quizzes">{{ q.name }} <button *ngIf="q.showDelete" (click)="deleteQuiz(q)">Delete</button></li>
-      </ul>
-  
-      <button (click)="addFunnyQuiz()">Add Funny Quiz</button>
-      <br><br>
-      <input type="text" [(ngModel)]="newQuizName">
-      <button (click)="addQuiz()">Add</button>    
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <button (click)="addFunnyQuiz()">Add Funny Quiz</button>
+                <br>
+                <br>
+                <input type="text" [(ngModel)]="newQuizName" placeholder="Enter quiz name"> &nbsp;
+                <br>
+                <app-choose-question-type-component></app-choose-question-type-component>
+                <br>
+                <button (click)="addQuiz()">Add</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+      <div class="card">
+        <div class="card-header">
+          Calculator
+        </div>
+        <div class="card-body">
+          <div>
+            <input type="number" [(ngModel)]="addNumberOne"> +
+            <input type="number" [(ngModel)]="addNumberTwo"> &nbsp;
+            <button (click)="addNumbers()">=</button>
+            &nbsp;&nbsp;
+            <label>{{ addNumbersResult }}</label>
+            <br>
+            <br>
+
+            <input type="number" [(ngModel)]="modNumberOne"> %
+            <input type="number" [(ngModel)]="modNumberTwo"> &nbsp;
+            <button (click)="modNumbers()">=</button>
+            &nbsp;&nbsp;
+            <label>{{ modNumbersResult }}</label>
+          </div>
+          <br>
+
+          <div>
+            <input type="number" [(ngModel)]="subtractNumberOne"> &nbsp;
+            <span class="redHighlight">-</span>&nbsp;
+            <input type="number" [(ngModel)]="subtractNumberTwo"> &nbsp;
+            <button class="redHighlight" (click)="subtractNumbers()">=</button>
+            &nbsp;&nbsp;
+            <label>{{ subtractNumbersResult }}</label>
+          </div>
+          <br>
+
+          <div>
+            <input type="number" [(ngModel)]="multiplyNumberOne"> *
+            <input type="number" [(ngModel)]="multiplyNumberTwo"> &nbsp;
+            <button (click)="multiplyNumbers()">=</button>
+            &nbsp;&nbsp;
+            <label>{{ multiplyNumbersResult }}</label>
+          </div>
+          <br>
+          <div>
+            <input type="number" [(ngModel)]="divideNumberOne"> /
+            <input type="number" [(ngModel)]="divideNumberTwo"> &nbsp;
+            <button (click)="divideNumbers()">=</button>
+            &nbsp;&nbsp;
+            <label>{{ divideNumbersResult }}</label>
+          </div>
+
+          <br>
+
+          <div>
+            <input type="number" [(ngModel)]="powNumberOne"> ^
+            <input type="number" [(ngModel)]="powNumberTwo"> &nbsp;
+            <button (click)="powNumbers()">=</button>
+            &nbsp;&nbsp;
+            <label>{{ powNumbersResult }}</label>
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>
