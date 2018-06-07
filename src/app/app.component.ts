@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { ChooseQuestionTypeComponentComponent } from './choose-question-type-component/choose-question-type-component.component';
 
-interface QuizDisplay{
+interface QuizDisplay {
   name: string;
   showDelete: boolean;
   summary?: string;
@@ -55,11 +55,13 @@ export class AppComponent {
   public addQuiz() {
 
     let summaryText = this.qtComp.questionTypes
-    .filter(x => x.checked === true)
-    .map(x => x.name)
-    .join(", ");
+      .filter(x => x.checked === true)
+      .map(x => x.name)
+      .join(", ");
 
-    summaryText = summaryText.length>0 ? `(${summaryText})` : "";
+    summaryText = summaryText.length > 0 ? `(${summaryText})` : "";
+
+
 
     console.log(summaryText);
 
@@ -68,7 +70,15 @@ export class AppComponent {
       , showDelete: true
       , summary: summaryText
     });
+
+    //
+    //clean up controls
+    //
+
     this.newQuizName = "";
+    
+    //clear out the checkboxes
+    this.qtComp.questionTypes = this.qtComp.questionTypes.map(x => ({ ...x, checked: false }));
   }
 
   public deleteQuiz(quizToDelete) {
