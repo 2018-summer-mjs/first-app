@@ -9,7 +9,7 @@
 
 <!-- {{ quizzes }} -->
 <ul>
-  <li *ngFor="let q of quizzes">{{ q.name }} <button *ngIf="q.showDelete" (click)="deleteQuiz(q)">Delete</button></li>
+  <li *ngFor="let q of quizzes">{{ q.name }} ({{ q.summary }}) <button *ngIf="q.showDelete" (click)="deleteQuiz(q)">Delete</button></li>
 </ul>
 
 <button (click)="addFunnyQuiz()">Add Funny Quiz</button>
