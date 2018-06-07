@@ -38,7 +38,25 @@ export class ChooseQuestionTypeComponentComponent implements OnInit {
     p
       .then(data => console.log(data))
       .catch(e => console.log(e));
-    
+
+    console.log('here');
+
+    this.getCountAsync();
+
   }
+
+
+  private async getCountAsync() {
+    try {
+      let n = await this.qtSvc.getAvailableQuestionTypeCount(true);
+      console.log('async ' + n);
+      console.log('here2');
+    } 
+    catch (cat) {
+      console.log(cat);
+    }
+  }
+    
+  
 
 }
