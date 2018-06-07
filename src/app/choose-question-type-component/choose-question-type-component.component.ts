@@ -22,7 +22,6 @@ export class ChooseQuestionTypeComponentComponent implements OnInit {
   
   // Life Cycle hook
 
-  
 
   ngOnInit() {
     this.questionTypes = this.questionTypeSvc.getAvailableQuestionTypes().map(x => ({name: x, checked: false}));

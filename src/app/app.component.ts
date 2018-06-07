@@ -46,7 +46,16 @@ export class AppComponent {
   public newQuizName; // = "foo";
 
   public addQuiz() {
-    console.log(this.questionTypeComponent.questionTypes)
+    
+
+    let summary = this.questionTypeComponent.questionTypes
+      .filter(x => x.checked)
+      .map(x => x.name)
+      .join(", "); //smartly uses the comma when needed
+
+      console.log(summary);
+
+  
 
     this.quizzes.push({ 
       name: this.newQuizName 
