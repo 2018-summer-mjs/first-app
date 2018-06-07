@@ -28,5 +28,23 @@ export class ChooseQuestionTypeComponentComponent implements OnInit {
         data.map(x => ({ name: x, checked: false }))
         , error => this.errorLoadingQuestionTypes = true
       );
+
+    this.qtSvc.getAvailableQuestionTypeCount(true)
+      .then(data => console.log(data))
+      .catch(error => console.log(error));
+
+    this.getCountAsync();
+  }
+
+  private async getCountAsync() {
+
+    try {
+      let count = await this.qtSvc.getAvailableQuestionTypeCount(false);
+      console.log(count);  
+    }
+
+    catch(error) {
+      console.log(error)
+    }
   }
 }
