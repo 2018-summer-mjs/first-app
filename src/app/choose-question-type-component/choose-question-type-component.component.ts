@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionTypeService } from '../question-type.service';
 
-interface  QuestionTypeDisplay {
+interface QuestionTypeDisplay {
   name: string;
   checked: boolean;
 }

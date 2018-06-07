@@ -8,9 +8,9 @@ describe('ChooseQuestionTypeComponentComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ChooseQuestionTypeComponentComponent ]
+      declarations: [ChooseQuestionTypeComponentComponent]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {

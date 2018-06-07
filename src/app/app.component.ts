@@ -34,7 +34,7 @@ export class AppComponent {
   public addFunnyQuiz() {
     this.quizzes.push({
       name: "Funny Quiz"
-      , showDelete: false 
+      , showDelete: false
     });
     //console.log(this.newQuizName);
   }
@@ -46,9 +46,9 @@ export class AppComponent {
 
   public addQuiz() {
     console.log(this.qtComp.questionTypes);
-  
-    this.quizzes.push({ 
-      name: this.newQuizName 
+
+    this.quizzes.push({
+      name: this.newQuizName
       , showDelete: true
     });
     this.newQuizName = "";
@@ -74,7 +74,7 @@ export class AppComponent {
   public addNumbers() {
     this.addNumbersResult = Number(this.addNumberOne) + Number(this.addNumberTwo);
   }
-  
+
   // Modulo Behavior
   public modNumberOne = 0;
   public modNumberTwo = 0;
