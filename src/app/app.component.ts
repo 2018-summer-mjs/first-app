@@ -59,7 +59,7 @@ export class AppComponent {
       .map(x => x.name)
       .join(", ");
 
-      summaryText = summaryText.length > 0 ? `(${summaryText})` : "";
+    summaryText = summaryText.length > 0 ? `(${summaryText})` : "";
 
     console.log(summaryText);
 
@@ -69,7 +69,12 @@ export class AppComponent {
       , summary: summaryText
     });
 
+    //
+    // Cleanup add quiz controls.
+    //
     this.newQuizName = "";
+
+    this.qtComp.questionTypes = this.qtComp.questionTypes.map(x => ({ ...x, checked: false }));
   }
 
   public deleteQuiz(quizToDelete) {
