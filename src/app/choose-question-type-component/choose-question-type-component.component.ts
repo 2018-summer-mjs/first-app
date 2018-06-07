@@ -18,14 +18,14 @@ export class ChooseQuestionTypeComponentComponent implements OnInit {
   constructor(private questionTypeSvc: QuestionTypeService) { }
 
   // View Model Properties
-  public questionTypes: string[];
+  public questionTypes: QuestionTypeDisplay[];
   
   // Life Cycle hook
 
   
 
   ngOnInit() {
-    this.questionTypes = this.questionTypeSvc.getAvailableQuestionTypes().map(x => ({name: x, checked: false}))
+    this.questionTypes = this.questionTypeSvc.getAvailableQuestionTypes().map(x => ({name: x, checked: false}));
   }
 
 }
