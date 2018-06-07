@@ -9,18 +9,15 @@ import { ChooseQuestionTypeComponentComponent } from './choose-question-type-com
 })
 export class AppComponent {
 
+  // Make the Question Type Component available to the root
   @ViewChild(ChooseQuestionTypeComponentComponent)
   public qtComponent: ChooseQuestionTypeComponentComponent;
 
 
   title = 'first-app';
-
-  // quizzes = [
-  //   "Quiz 1"
-  //   , "Quiz 2"
-  //   , "Quiz 3"
-  // ];
-
+  //
+  // Create Quizzes Object
+  //
   public quizzes = [
     {
       name: "Quiz 1"
@@ -36,6 +33,9 @@ export class AppComponent {
     }
   ];
 
+  //
+  // Add The Funny Quiz to Quiz Object
+  //
   public addFunnyQuiz() {
     this.quizzes.push({
       name: "Funny Quiz"
@@ -46,9 +46,15 @@ export class AppComponent {
 
   public newQuizName; // = "foo";
 
+
+  //
+  // Add user Quiz to Quiz Object
+  //
   public addQuiz() {
 
     console.log(this.qtComponent.questionTypes);
+    let trueQuizTypes = this.qtComponent.questionTypes.filter(x => x.checked === true);
+    console.log(trueQuizTypes);
     
     this.quizzes.push({ 
       name: this.newQuizName 
@@ -57,13 +63,14 @@ export class AppComponent {
     this.newQuizName = "";
   }
 
+  // Delete Quiz from Quiz Object
   public deleteQuiz(quizToDelete) {
     this.quizzes = this.quizzes.filter(x => x !== quizToDelete);
   }
 
-  //
+  /////////////////////////////////////
   // Calculator behavior
-  //
+  /////////////////////////////////////
 
   // Addition
   public addNumberOne = 0;
