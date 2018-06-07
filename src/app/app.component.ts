@@ -64,6 +64,8 @@ export class AppComponent {
 
     summaryText = summaryText.length > 0 ? `(${summaryText})` : "";
 
+
+
     console.log(summaryText);
 
 
@@ -74,8 +76,9 @@ export class AppComponent {
       , summary: summaryText
     });
     
-    console.log(this.quizzes);
+    // Clean up input control
     this.newQuizName = "";
+    this.qtComponent.questionTypes = this.qtComponent.questionTypes.map(x =>({...x, checked: false}));
   }
 
   // Delete Quiz from Quiz Object
