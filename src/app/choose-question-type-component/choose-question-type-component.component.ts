@@ -48,9 +48,25 @@ export class ChooseQuestionTypeComponentComponent implements OnInit {
 
   private async getCountAsync() {
     try {
-      let n = await this.qtSvc.getAvailableQuestionTypeCount(true);
-      console.log('async ' + n);
+      // runs sequentiall
+      // let n = await this.qtSvc.getAvailableQuestionTypeCount(true);
+      // let n2 = await this.qtSvc.getAvailableQuestionTypeCount(false);
+      
+      // set up to run parallel
+      let n = this.qtSvc.getAvailableQuestionTypeCount(true);
+      console.log('after ' + n);
+      let n2 = this.qtSvc.getAvailableQuestionTypeCount(false);
+      console.log('after ' + n2);
+
+      let results = await Promise.all([ n, n2 ]); // runs in parallel waiting for all to finish
+      
+      // let results = await Promise.race([ n, n2 ]); // runs in parallel, but finishes when first when comes back
+      // console.log(results);
+
+
+      console.log('async ' + results[0]);
       console.log('here2');
+      console.log('async ' + results[1]);
     } 
     catch (cat) {
       console.log(cat);
