@@ -26,18 +26,42 @@ export class ChooseQuestionTypeComponentComponent implements OnInit {
   ngOnInit() {
 
     this.qtSvc.getAvailableQuestionsTypes().subscribe(
-          data => {
-            this.questionTypes = data.map( x => ({ name: x, checked: false }));
-            console.log(data);
-          }
-          , error => {
-            this.errorLoadingQuestionTypes = true;
-            console.log(error);
-          }
-      );
-    
-    
+      data => {
+        this.questionTypes = data.map(x => ({ name: x, checked: false }));
+        console.log(data);
+      }
+      , error => {
+        this.errorLoadingQuestionTypes = true;
+        console.log(error);
+      }
+    );
+
+
     // .map(x => ({ name: x, checked: false }))
+
+    let p = this.qtSvc.getAvailableQuestionTypeCount(true);
+
+    p
+      .then(data => console.log(data))
+      .catch(e => console.log(e));
+
+    console.log("After the Promise call...");
+
+    this.getCountAsync();
+
+  } // end ngOnInit()
+
+  private async getCountAsync() {
+
+    try {
+      let n = await this.qtSvc.getAvailableQuestionTypeCount(true);
+      console.log(n);
+      console.log("ASYNC/AWAIT Try");
+    } catch {
+      console.log("ASYNC/AWAIT Catch");
+    }
+
   }
+
 
 }
