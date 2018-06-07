@@ -47,10 +47,8 @@ export class AppComponent {
   @ViewChild(ChooseQuestionTypeComponentComponent)
   public qtComp: ChooseQuestionTypeComponentComponent
   public addQuiz() {
-    
+
     console.log(this.qtComp.questionTypes);
-
-
 
     this.quizzes.push({ 
       name: this.newQuizName 
