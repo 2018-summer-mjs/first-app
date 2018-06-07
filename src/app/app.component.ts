@@ -1,6 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
 import { ChooseQuestionTypeComponentComponent } from './choose-question-type-component/choose-question-type-component.component';
 
+
+interface QuizDisplay {
+  name: string;
+  showDelete: boolean;
+  summary?: string;
+}
+
 @Component({
   selector: 'first-app',
   templateUrl: './app.component.html',
@@ -21,7 +28,7 @@ export class AppComponent {
   public qtComp: ChooseQuestionTypeComponentComponent
 
 
-  public quizzes = [
+  public quizzes: QuizDisplay[] = [
     {
       name: "Quiz 1"
       , showDelete: false
@@ -66,6 +73,7 @@ export class AppComponent {
     this.quizzes.push({ 
       name: this.newQuizName
       , showDelete: true
+      , summary: summary
     });
     this.newQuizName = "";
   }
