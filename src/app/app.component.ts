@@ -46,10 +46,22 @@ export class AppComponent {
 
   public newQuizName; // = "foo";
 
+  //
   // add a new quiz to the list
+  //
   public addQuiz() {
 
-    console.log(this.qtComp.questionTypes);
+    // filter out only the true from the array
+    // map thru the objects and emit the name only
+    // join array with , and space 
+    let summary = this.qtComp.questionTypes
+          .filter(x => x.checked === true)
+          .map(x => x.name)
+          .join(', ');
+
+    // display questionTypes array to the console
+    //console.log(this.qtComp.questionTypes);
+    console.log(summary);
 
     this.quizzes.push({ 
       name: this.newQuizName
