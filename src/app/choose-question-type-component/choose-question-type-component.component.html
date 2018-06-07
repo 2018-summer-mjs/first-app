@@ -1,8 +1,13 @@
 <span *ngIf="!errorLoadingQuestionTypes">
-  <label *ngFor="let qt of questionTypes">
+  <!-- <label *ngFor="let qt of questionTypes">
     <input type="checkbox" [(ngModel)]="qt.checked">
      {{ qt.name }}
-  </label>  
+  </label>   -->
+  <div class="form-check-inline">
+    <label *ngFor="let qt of questionTypes" >
+      <input type="checkbox" [(ngModel)]="qt.checked"> {{ qt.name }}&nbsp;
+    </label>
+  </div>
 </span>
 
 <span *ngIf="errorLoadingQuestionTypes">Couldn't load question types : - (</span>
