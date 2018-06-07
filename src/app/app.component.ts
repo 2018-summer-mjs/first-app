@@ -59,7 +59,7 @@ export class AppComponent {
       .map(x => x.name)
       .join(", "); //smartly uses the comma when needed
 
-      summaryText = summaryText.length > 0 ? `(${summaryText})` : "";
+      summaryText = summaryText.length > 0 ? ` (${summaryText})` : "";
       console.log(summaryText);
 
   
@@ -73,7 +73,7 @@ export class AppComponent {
 
     // clean up input controls  so checkboxes not checked
     this.newQuizName = "";
-    this.questionTypeComponent.questionTypes = this.questionTypeComponent.questionTypes.map(x => ({...x, checked: false}));
+    this.questionTypeComponent.questionTypes = this.questionTypeComponent.questionTypes.map(x => ({...x, checked: false}));  
   }
 
   public deleteQuiz(quizToDelete) {
