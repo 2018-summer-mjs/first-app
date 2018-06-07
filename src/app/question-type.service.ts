@@ -1,18 +1,23 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionTypeService {
 
-  constructor() { }
+  constructor(private builtInAngularHttpClient: HttpClient) { }
 
   public getAvailableQuestionTypes() {
-    return [
-      "Multiple Choice"
-      , "True/False"
-      , "Essay"
-      , "Short Answer"
-    ];
+
+    return this.builtInAngularHttpClient
+      .get<string[]>("https://modern-js.azurewebsites.net/api/GetQuestionTypes?name=Magic%20Question");
+
+    // return [
+    //   "Multiple Choice"
+    //   , "True/False"
+    //   , "Essay"
+    //   , "Short Answer"
+    // ];
   }
 }
