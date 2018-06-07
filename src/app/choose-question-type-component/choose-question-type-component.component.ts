@@ -22,7 +22,15 @@ export class ChooseQuestionTypeComponentComponent implements OnInit {
   // Life cycle hook.
   ngOnInit() {
 
-    this.questionTypes = this.qtSvc.getAvailableQuestionTypes().map(x => ({ name: x, checked: false }));
+    this.questionTypes = this.qtSvc.getAvailableQuestionTypes().subscribe(
+      data => console.log(data)
+      , error => console.log(error)
+    );
+    
+    
+    
+    
+    //.map(x => ({ name: x, checked: false }));
     
   }
 
