@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ChooseQuestionTypeComponentComponent } from './choose-question-type-component/choose-question-type-component.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { ChooseQuestionTypeComponentComponent } from './choose-question-type-com
   imports: [
     BrowserModule
     , FormsModule
+    , HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

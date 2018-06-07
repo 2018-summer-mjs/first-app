@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class QuestionTypeService {
 
-  constructor() { }
+  constructor(private builtInAngularHTTPClient:HttpClient) { }
 
   public getAvailableQuestionTypes() {
+
+    // make a call to http://modern-js.azurewebsites.net/api/GetQuestionTypes?name=foo to get data
     return [
       "Multiple Choice"
       , "True/False"
