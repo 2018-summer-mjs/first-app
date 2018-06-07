@@ -29,6 +29,25 @@ export class ChooseQuestionTypeComponentComponent implements OnInit {
         console.log(error);
       }
     );
+
+    // promise call
+    let p = this.qtSvc.getAvailableQuestionTypeCount(true);
+
+    p
+    .then(data => console.log(data)) // promise is good
+    .catch(e => console.log(e))      // bad promise
+
+    // older way with async method
+    this.getCountAsync();
+  }
+
+  private async getCountAsync() {
+    try {
+      let n  = await this.qtSvc.getAvailableQuestionTypeCount(true);
+      console.log(n);
+    } catch (e) {
+      console.log(e);
+    }
   }
 
 }

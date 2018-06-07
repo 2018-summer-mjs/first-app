@@ -13,4 +13,15 @@ export class QuestionTypeService {
     
     return this.builtInAngularHttpClient.get<string[]>("https://modern-js.azurewebsites.net/api/GetQuestionTypes?name=Magic%20Question");
   }
+
+  public getAvailableQuestionTypeCount(succeed: boolean): Promise<number> {
+
+    let p = new Promise<number>(
+      (resolve, reject) => {
+        succeed ? resolve(42) : reject("failed");
+      }
+    );
+
+    return p;
+  }
 }
