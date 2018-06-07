@@ -11,7 +11,7 @@ export class QuestionTypeService {
   public getAvailableQuestionTypes() {
 
     return this.builtInAngularHttpClient
-        .get<string[]>("https://modern-js.azurewebsites.net/api/GetQuestionTypes?name=Magic%20%Quiz");
+        .get<string[]>("https://modern-js.azurewebsites.net/api/GetQuestionTypes?name=Magic%20Quiz");
 
     // return [
     //   "Multiple Choice"
