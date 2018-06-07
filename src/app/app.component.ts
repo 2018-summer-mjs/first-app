@@ -47,7 +47,13 @@ export class AppComponent {
   
   public addQuiz() {
 
-    console.log(this.qtComp.questionTypes);
+
+    let summary = this.qtComp.questionTypes
+      .filter(x => x.checked === true)
+      .map(x => x.name)
+      .join(", ");
+
+    console.log(summary);
 
     this.quizzes.push({ 
       name: this.newQuizName 
