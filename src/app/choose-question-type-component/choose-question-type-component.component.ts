@@ -29,6 +29,39 @@ export class ChooseQuestionTypeComponentComponent implements OnInit {
         this.errorLoadingQuestionTypes = true;
         console.log(error);
       });
+
+    let p = this.qtSvc.getAvailableQuestionTypeCount(true);
+
+    p.then(data => console.log(data))
+      .catch(e => console.log(e));
+
+    console.log('here');
+
+
+    this.getCountAsync();
+  }
+
+  private async getCountAsync() {
+
+      try {        
+        let n = this.qtSvc.getAvailableQuestionTypeCount(true);      
+        console.log("after n");
+        let n2 = this.qtSvc.getAvailableQuestionTypeCount(false);      
+        console.log("after n2");
+        
+        // let results = await Promise.race([ n, n2 ]);
+        // console.log(results);
+
+        let results = await Promise.all([ n, n2 ]);
+        console.log("don't see this");
+        console.log(results[0]);
+        console.log(results[1]);
+
+        console.log("here2");  
+      }
+      catch (cat) {
+        console.log(cat);
+      }
   }
 
 }

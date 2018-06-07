@@ -20,4 +20,15 @@ export class QuestionTypeService {
     //   , "Short Answer"
     // ];
   }
+
+  public getAvailableQuestionTypeCount(succeed: boolean): Promise<number> {
+
+    let p = new Promise<number>(
+      (resolve, reject) => {
+        succeed ? resolve(42) : reject("Failed");
+      }
+    );
+
+    return p;
+  }
 }
